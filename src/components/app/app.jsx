@@ -3,7 +3,7 @@ import MainPage from "../main-page/main-page";
 
 const App = () => {
   return (
-    <MainPage />
+    <MainPage offerCount={6}/>
   );
 };
 

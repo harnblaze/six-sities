@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from "../card/card";
+import PropTypes from "prop-types";
 
 
-const MainPage = () => {
+const MainPage = ({offerCount}) => {
   return (
     <>
       <div style={{display: `none`}}>
@@ -104,7 +105,7 @@ const MainPage = () => {
                   </ul>
                 </form>
                 <div className="cities__places-list places__list tabs__content">
-                  { new Array(5).fill(null).map((_, i) => <Card key={i}/>)}
+                  { new Array(offerCount).fill(null).map((_, i) => <Card key={i}/>)}
                 </div>
               </section>
               <div className="cities__right-section">
@@ -118,5 +119,8 @@ const MainPage = () => {
   );
 };
 
+MainPage.propTypes = {
+  offerCount: PropTypes.number.isRequired
+};
 
 export default MainPage;
